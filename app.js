@@ -1,11 +1,12 @@
 const express = require('express')
 const app = express()
-const tasks = require('./routes/task')
+const tasks = require('./routes/tasks')
 const port = 3000
-const connectDb = require("./db/connection")
+const connectDb = require("./db/connect")
 require('dotenv').config()
 
 //middleware
+    
 app.use(express.static('./public'))
 
 app.use(express.json())

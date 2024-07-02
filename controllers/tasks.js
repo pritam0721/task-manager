@@ -1,7 +1,5 @@
 const Task = require('../models/Task');
 
-
-
 const getAllTasks = async (req, res) => {
     try {
         const task = await Task.find({});
@@ -54,6 +52,7 @@ const deletTask = async (req, res) => {
 
 
 }
+
 const updateTask = async (req, res) => {
     try {
         const { id:taskID } = req.params
@@ -77,6 +76,5 @@ module.exports = {
     createTask,
     getTask,
     updateTask,
-    deletTask
-
+    deletTask,
 }
