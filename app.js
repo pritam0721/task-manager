@@ -6,15 +6,13 @@ const connectDb = require("./db/connection")
 require('dotenv').config()
 
 //middleware
+app.use(express.static('./public'))
+
 app.use(express.json())
 
 //static files
-app.use(express.static('./public'))
-app.use(('/api/v1/tasks'), tasks)
 
-app.get('/hello', (req, res) => {
-      res.send('hello task manager ')
-})
+app.use(('/api/v1/tasks'), tasks)
 
 const start = async () =>{
        try { 
